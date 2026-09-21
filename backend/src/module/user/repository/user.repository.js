@@ -5,3 +5,9 @@ export async function findByEmail(email) {
 
     return result[0];
 }
+
+export async function findAll() {
+    const [result] = await db.query('SELECT * FROM users');
+
+    return result;
+}
