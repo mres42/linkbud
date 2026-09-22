@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import authRoutes from './src/module/auth/routes/auth.routes.js';
 import userRoutes from './src/module/user/routes/user.routes.js';
 import linkListRoutes from './src/module/link-list/routes/link-list.routes.js';
@@ -6,6 +7,7 @@ import linkRoutes from './src/module/link/routes/link.routes.js';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/v1', authRoutes);
