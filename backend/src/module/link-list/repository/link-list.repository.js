@@ -13,3 +13,15 @@ export async function findById(id) {
 
     return result[0];
 }
+
+export async function findByUserId(userId) {
+    const [rows] = await db.query(
+        `SELECT *
+         FROM link_lists
+         WHERE user_id = ?
+         ORDER BY created_at DESC`,
+        [userId]
+    );
+
+    return rows;
+}

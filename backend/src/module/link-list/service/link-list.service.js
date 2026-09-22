@@ -29,3 +29,7 @@ export async function create(
 
     return await linkListRepository.findById(linkListId);
 }
+
+export async function findByUserId(userId) {
+    return await linkListRepository.findByUserId(userId);
+}
